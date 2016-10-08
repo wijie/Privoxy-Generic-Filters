@@ -1,0 +1,246 @@
+# Last Modified: Sun, 02 Oct 2016 08:26:55 UTC
+
+################################################################################
+#
+# Advertising
+#
+################################################################################
+FILTER: generic-filters generic ads filter
+# s|adsbygoogle||Usgi
+
+s|<(a\|iframe\|img)\s[^>]*(href\|src)=["'](\
+  http://[^/]+\.moshimo\.com/\|\
+  http://amazon\.jp/dp/\|\
+  http://www\.amazon\.co\.jp/gp/\|\
+  http://www\.amazon\.co\.jp/dp/\|\
+  http://astore\.amazon\.co\.jp/\|\
+  [^'"]*amazon-adsystem\.com/\|\
+  http://[^'"]*www\.amazon\.co\.jp/exec/obidos/\|\
+  http://[^'"]*/ad/\|\
+  /[^'"]*/ad-\|\
+  http://[^'"]*\.ajaxtower\.jp/adarea\|\
+  http://[^'"]*\.a8\.net/\|\
+#  http://[^'"]*\.advg\.jp/\|\
+  http://[^'"]*\.linksynergy\.com/\|\
+  http://[^'"]*\.accesstrade\.net/\|\
+  http://ad2\.trafficgate\.net/\|\
+  https://[^'"]*affiliate-b\.com/\|\
+  http://[^'"]*afl\.rakuten\.co\.jp/\|\
+  https://[^'"]*www\.dmm\.co\.jp/mono/goods/\|\
+  http://[^'"]*valuecommerce\.com/\|\
+  http://[^'"]*bit\.ly/\
+)[^>]*>|<$1 style="display:none;">|Usgx
+
+s/<(div|img|ul)\s[^>]*(class|id)=['"](\
+  amazon|\
+  amaz[^'"]*|\
+#  [^'"]*amazon[^'"]*|\
+  [^'"]*yahoo[^'"]*|\
+  [^'"]*rakuten[^'"]*\
+)['"][^>]*>/<$1 style="display:none;">/Usgxi
+
+s/<(aside|div|dl|iframe|ins|section|span|td|ul)\s[^>]*(id|class)[ ]*=['" ]+(\
+  [^'"]*affiliate[^'"]*|\
+  [^'"]+sponsor[^'"]+|\
+  [^'"]+-gad-[^'"]+|\
+  googleAd|\
+  pr_[^'"]+|\
+  [^'"]+_pr|\
+  pr|\
+  [^'"]*banner[^'"]*|\
+  [^'"]*[-_]bnr(s)?|\
+  [^'"]*[-_]bnr[-_ ][^'"]*|\
+  [^'"]*[-_]adsense[-_ ][^'"]*|\
+  [^'"]*[-_ ]ad(s)?[-_  ][^'"]*|\
+  ads[^'"]*|\
+  [^'"]*adsparts|\
+  [^'"]*[-_ ]ad|\
+  ad[-_][^'"]*|\
+  ad\
+)['"][^>]*>/<$1 style="display:none;">/Usgxi
+
+s|<a\s[^>]*(\
+  supporter\|\
+  banner\|\
+  /pr/\
+)[^>]*>|<a style="display:none;">|Usgx
+
+################################################################################
+#
+# LINE
+#
+################################################################################
+FILTER: line-filters line filter
+s|<li\ (class\|id)="[^"]*line[^"]*">|<li style="display:none;">|Usgix
+s|<a\s[^>]*href=["'](http:\|https:)?//(\
+  line\.me/\|\
+  line\.naver\.jp\
+).*</a>||Usgx
+
+################################################################################
+#
+# Facebook
+#
+################################################################################
+FILTER: fb-filters facebook filter
+s|<a\s[^>]*href=['"](http:\|https:)?//(www\|m)\.facebook\.com/.*</a>||Usg
+s|<iframe\s[^>]*src=["'](http:\|https:)?//www\.facebook\.com/.*</iframe>||Usg
+s/<(dd|div|li|p|span)\s+(class|id)=['"](\
+  [^'"]*fblike[^'"]*|\
+  [^'"]*facebook[^'"]*|\
+  [a-z]+fb|\
+  [^'"]+-fb-[^'"]+|\
+  fb|\
+  fb-[^'"]+\
+)['"][^>]*>/<$1 style="display:none;">/Usgix
+
+################################################################################
+#
+# Twitter
+#
+################################################################################
+FILTER: tw-filters twitter filter
+s|<a\s+href=["'](http:\|https:)?//(mobile\.)?twitter\.com/[^>]*>|<a style="display:none;">|Usg
+s/<(dd|div|li|p|span)\s+(class|id)=['"](\
+  [a-z]+tw|\
+  [^'"]*twitter[^'"]*|\
+  [^'"]*tweet[^'"]*|\
+  tw\
+)['"][^>]*>/<$1 style="display:none;">/Usgix
+
+################################################################################
+#
+# Google+
+#
+################################################################################
+FILTER: gplus-filters google+ filter
+s|<script\s[^>]*src=["']http(s)?://apis\.google\.com/js/plusone\.js["'].*</script>||Usg
+s|<a\s[^>]*href=['"][^>]*https://(plus\|plusone)\.google\.com/.*</a>||Usg
+s/<(div|li|span)\s+(class|id)=['"](\
+  [^'"]+[-_]google|\
+  [^'"]*gplus[^'"]*|\
+  [^'"]*google-plus|\
+  [^'"]*plusone[^'"]*\
+)['"][^>]*>/<$1 style="display:none;">/Usgix
+s|<g:plusone.*</g:plusone>||Usg
+
+################################################################################
+#
+# Hatena
+#
+################################################################################
+FILTER: hatena-filters hatena filter
+s|<a\s[^>]*href=["'](http:)?//b\.hatena\.ne\.jp/.*</a>||Usg
+s/<(div|span|li)\s(class|id)="(\
+  [^"]*hatena-star[^"]*|\
+  [^"]*hatebu[^"]*|\
+  [^"]*hatena[^"-]*\
+)"[^>]*>/<$1 style="display:none;">/Usgix
+
+################################################################################
+#
+# Mixi
+#
+################################################################################
+FILTER: mixi-filters mixi filter
+s|<a\s[^>]*href=['"]http(s)?://(\
+  mixi\.jp/share\.pl.*\
+)</a>||Usgxi
+
+s/<(a|aside|div|dl|ins|li|p|section|span|ul)\s[^>]*(id|class)=['"](\
+  [^'"]*mixi[^'"]*\
+)['"][^>]*>/<$1 style="display:none;">/Usgxi
+
+################################################################################
+#
+# RSS
+#
+################################################################################
+FILTER: rss-filters rss filter
+s/<(dd|div|img|li|p|span)\s+[^>]*(alt|class|id)=['"](\
+  RSS[^'"]*|\
+  [a-z]+fd|\
+  [^'"]*rss[^'"]*\
+)['"][^>]*>/<$1 style="display:none;">/Usgix
+
+s|<a\s[^>]*href=['"](http://\|https://)?(\
+  [^'"]*/feed[^>]+>.*\
+)</a>||Usgxi
+
+################################################################################
+#
+# feedly
+#
+################################################################################
+FILTER: feedly-filters feedly filter
+s|<a\s[^>]*href=['"](http:\|https:)?//(\
+  cloud\.feedly\.com/.*\
+)</a>||Usgxi
+
+s/<(a|aside|div|dl|ins|li|p|section|span|ul)\s[^>]*(id|class)=['"](\
+  [^'"]*feedly[^'"]*\
+)['"][^>]*>/<$1 style="display:none;">/Usgxi
+
+################################################################################
+#
+# Pocket
+#
+################################################################################
+FILTER: pocket-filters pocket filter
+s|<a\s[^>]*href=['"]http(s)?://(\
+  getpocket\.com/.*\
+)</a>||Usgxi
+
+s/<(a|aside|div|dl|ins|li|p|section|span|ul)\s[^>]*(id|class)=['"](\
+  [^'"]*pocket[^'"]*\
+)['"][^>]*>/<$1 style="display:none;">/Usgxi
+
+################################################################################
+#
+# Linkedin
+#
+################################################################################
+FILTER: linkedin-filters linkedin filter
+s|<script\s[^>]*src=['"]//(\
+  platform\.linkedin\.com/.*\|\
+  )</script>||Usgxi
+
+s/<(a|aside|div|dl|ins|li|p|section|span|ul)\s[^>]*(id|class)=['"](\
+  [^'"]*linkedin[^'"]*\
+)['"][^>]*>/<$1 style="display:none;">/Usgxi
+
+################################################################################
+#
+# Instagram
+#
+################################################################################
+FILTER: instagram-filters instagram filter
+s|<a\s[^>]*href=['"]http(s)?://(\
+  instagram\.com/.*\
+)</a>||Usgxi
+
+s/<(a|aside|div|dl|ins|li|p|section|span|ul)\s[^>]*(id|class)=['"](\
+  [^'"]*insta[^'"]*\
+)['"][^>]*>/<$1 style="display:none;">/Usgxi
+
+################################################################################
+#
+# etc...
+#
+################################################################################
+FILTER: sns-filters sns filter
+s|<a\s[^>]*href=['"]http(s)?://(\
+  feeds\.feedburner\.com/.*\
+)</a>||Usgxi
+
+s/<(a|aside|div|dl|ins|iframe|li|p|section|span|ul)\s[^>]*(id|class)=['"](\
+  [^'"]*sharify[^'"]*|\
+  [^'"]*follow[^'"]*|\
+  [^'"]*tumblr[^'"]*|\
+  [^'"]*twipple[^'"]*|\
+  [^'"]*youtube[^'"]*|\
+  [^'"]*pinterest[^'"]*|\
+  [^'"]*sns[^'"]*|\
+  [^'"]*social[^'"]*|\
+  [^'"]*share[^'"]*\
+)['"][^>]*>/<$1 style="display:none;">/Usgxi

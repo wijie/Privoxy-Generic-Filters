@@ -1,0 +1,196 @@
+# Last Modified: Sun, 02 Oct 2016 08:29:39 UTC
+
+#############################################################################
+# Aliases
+#############################################################################
+{{alias}}
+
+crunch-generic-ads= +filter{generic-filters}
+crunch-sns= +filter{fb-filters} \
+	    +filter{feedly-filters} \
+	    +filter{gplus-filters} \
+	    +filter{hatena-filters} \
+	    +filter{instagram-filters} \
+	    +filter{line-filters} \
+	    +filter{linkedin-filters} \
+	    +filter{mixi-filters} \
+	    +filter{pocket-filters} \
+	    +filter{rss-filters} \
+	    +filter{sns-filters} \
+	    +filter{tw-filters}
+crunch-all-ads= crunch-generic-ads crunch-sns
+
+allow-generic-ads= -filter{generic-filters}
+allow-sns= -filter{fb-filters} \
+	   -filter{feedly-filters} \
+	   -filter{gplus-filters} \
+	   -filter{hatena-filters} \
+	   -filter{instagram-filters} \
+	   -filter{line-filters} \
+	   -filter{linkedin-filters} \
+	   -filter{mixi-filters} \
+	   -filter{pocket-filters} \
+	   -filter{rss-filters} \
+	   -filter{sns-filters} \
+	   -filter{tw-filters}
+
+allow-all-ads= allow-generic-ads allow-sns
+
+## end aliases ########################################################
+
+{ +block{Mission Complete!} }
+/(.*/)?ad[^/]*.jpg
+/(.*/)?ad_.*
+/(.*/)?adparts.*
+/(.*/)?clear.gif
+beacon.
+.a8.net/
+adm.shinobi.jp/
+.ad-stir.com/
+.ad-v.jp/
+.adapf.com/
+.addthis.com/
+.adimg.net/
+.adingo.jp/
+.admob.com/
+.adresult.jp/
+.adriver.ru/
+.advg.jp/
+.affiliate-b.com/
+#.afpbb.com/
+#.akamai.net/
+#.akamaihd.net/
+.amoad.com/
+.applovin.com/
+.apvdr.com/
+.bidswitch.net/
+.bigmining.com/
+.content.ad/
+.criteo.com/
+.criteo.net/
+.cxense.com/
+.durasite.net/
+.ebis.ne.jp/
+.eco-tag.jp/
+.eimg.jp/
+.fello.net/
+.fout.jp/
+.genieesspv.jp/
+gikotena.net/
+.glam.com/
+.grvcdn.com/
+.gvt1.com/
+.gvt2.com/
+.impact-ad.jp/
+.im-apps.net/
+.i-mobile.co.jp/
+info-zero.jp/
+.kaereba.com/
+.kau.li/
+.krxd.net/
+.liveads.jp/
+.logly.co.jp/
+.microad.jp/
+.microad.net/
+.moba8.net/
+.moshimo.com/
+nakanohito.jp/
+.newrelic.com/
+.newzia.jp/
+.openx.net/
+.outbrain.com/
+.owneriq.com/
+.php-imdex.com/
+.popin.cc/
+.ptengine.jp/
+match.seesaa.jp/
+.setrk.com/
+.sharethis.com/
+.shinobi.jp/
+.skimresources.com/
+.socdm.com/
+blog.so-net.ne.jp/_js/bl-bookmarks-phone.js
+.tapone.jp/
+.teacup.com/common/js/apclips.js
+.thebrighttag.com
+.tidbit.co.in/
+.trafficgate.net/
+#.traficfactory.biz/
+.turn.com/
+.unitedblades.co.jp/
+.unthem.com/
+.vidible.tv/
+.xlisting.jp/
+.zenback.jp/
+.addthis.com/
+widget.zenback.jp/
+.taboola.com/
+download.macromedia.com/
+#.wp.com/
+.ziyu.net/
+
+# Amazon
+rcm-jp.amazon.co.jp/
+.amazon-adsystem.com/
+.amaprop.net/
+
+# rakuten
+.afl.rakuten.co.jp/
+.affiliate.rakuten.co.jp/
+.ashiato.rakuten.co.jp/
+
+# Google
+#apis.google.com/
+.googleadservices.com/
+.googlesyndication.com/
+.googletagservices.com/
+.google-analytics.com/analytics.js
+
+# Yahoo! JAPAN
+im.ov.yahoo.co.jp/
+im.seesaa.ov.yahoo.co.jp/
+ard.yahoo.co.jp/
+b3.yahoo.co.jp/
+b92.yahoo.co.jp/
+yads.yahoo.co.jp/
+m.chiebukuro.yahoo.co.jp/common/ChieSpAndroidBubble.js
+#i.yimg.jp/images/jpnews/js/libs/jquery/1.10.2/jquery.min.js
+i.yimg.jp/images/ks/m/img/richSmartBanner/
+i.yimg.jp/images/chocotle/img/bnr/
+i.yimg.jp/lib/news/socialModule/
+.geocities.yahoo.co.jp/js/gg.js
+.yimg.jp/.*/crm1.3.js
+
+# Facebook
+#.facebook.net/ja_JP/all.js
+#.facebook.net/ja_JP/sdk.js
+www.facebook.com/plugins/like.php
+graph.facebook.com/
+connect.facebook.net/
+.fbcdn.net/
+
+.api.twitter.com/
+platform.twitter.com/widgets.js
+ad.hatena.ne.jp/
+.hatena.ne.jp/adsaria/
+.b.st-hatena.com/
+#b.hatena.ne.jp/
+s.hatena.ne.jp/js/HatenaStar.js
+static.mixi.jp/js/share.js
+widgets.getpocket.com/
+platform.tumblr.com/
+media.line.me/
+scdn.line-apps.com/
+
+#{ crunch-all-ads }
+#/ # Match all URLs
+
+{ crunch-generic-ads }
+/
+
+{ crunch-sns }
+/
+
+# { allow-generic-ads }
+
+# { allow-sns }
