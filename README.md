@@ -7,7 +7,7 @@ You add **"actionsfile generic.action"** to config.
 > **actionsfile generic.action**  
 > actionsfile user.action      # User customizations
 
-You add **"filtersfile generic.filter"** to config.
+You add **"filterfile generic.filter"** to config.
 > filterfile default.filter  
 > **filterfile generic.filter**  
 > filterfile user.filter      # User customizations
