@@ -1,4 +1,4 @@
-# Last Modified: Sun, 02 Oct 2016 08:26:55 UTC
+# Last Modified: Sat, 15 Oct 2016 02:29:19 UTC
 
 ################################################################################
 #
@@ -40,6 +40,7 @@ s/<(div|img|ul)\s[^>]*(class|id)=['"](\
 )['"][^>]*>/<$1 style="display:none;">/Usgxi
 
 s/<(aside|div|dl|iframe|ins|section|span|td|ul)\s[^>]*(id|class)[ ]*=['" ]+(\
+  [^'"]*advert[^'"]*|\
   [^'"]*affiliate[^'"]*|\
   [^'"]+sponsor[^'"]+|\
   [^'"]+-gad-[^'"]+|\
@@ -114,7 +115,8 @@ s/<(dd|div|li|p|span)\s+(class|id)=['"](\
 #
 ################################################################################
 FILTER: gplus-filters google+ filter
-s|<script\s[^>]*src=["']http(s)?://apis\.google\.com/js/plusone\.js["'].*</script>||Usg
+# s|<script\s[^>]*src=["']http(s)?://apis\.google\.com/js/plusone\.js["'].*</script>||Usg
+s|\ src=["']http(s)?://apis\.google\.com/js/plusone\.js["']||Usg
 s|<a\s[^>]*href=['"][^>]*https://(plus\|plusone)\.google\.com/.*</a>||Usg
 s/<(div|li|span)\s+(class|id)=['"](\
   [^'"]+[-_]google|\
