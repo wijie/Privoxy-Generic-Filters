@@ -1,4 +1,4 @@
-# Last Modified: Sun, 06 Nov 2016 01:29:29 UTC
+# Last Modified: Wed, 09 Nov 2016 10:28:43 UTC
 
 ################################################################################
 #
@@ -68,7 +68,7 @@ s|<a\s[^>]*(\
 
 ################################################################################
 #
-# LINE
+# LINE Button
 #
 ################################################################################
 FILTER: line-filters line filter
@@ -80,7 +80,7 @@ s|<a\s[^>]*href=["'](http:\|https:)?//(\
 
 ################################################################################
 #
-# Facebook
+# Facebook Button
 #
 ################################################################################
 FILTER: fb-filters facebook filter
@@ -97,7 +97,7 @@ s/<(dd|div|li|p|span)\s+(class|id)=['"](\
 
 ################################################################################
 #
-# Twitter
+# Twitter Button
 #
 ################################################################################
 FILTER: tw-filters twitter filter
@@ -111,7 +111,7 @@ s/<(dd|div|li|p|span)\s+(class|id)=['"](\
 
 ################################################################################
 #
-# Google+
+# Google+ Button
 #
 ################################################################################
 FILTER: gplus-filters google+ filter
@@ -128,7 +128,7 @@ s|<g:plusone.*</g:plusone>||Usg
 
 ################################################################################
 #
-# Hatena
+# Hatena Bookmark Button
 #
 ################################################################################
 FILTER: hatena-filters hatena filter
@@ -141,7 +141,7 @@ s/<(div|span|li)\s(class|id)="(\
 
 ################################################################################
 #
-# Mixi
+# Mixi Button
 #
 ################################################################################
 FILTER: mixi-filters mixi filter
@@ -149,13 +149,13 @@ s|<a\s[^>]*href=['"]http(s)?://(\
   mixi\.jp/share\.pl.*\
 )</a>||Usgxi
 
-s/<(a\s|aside|div|dl|ins|li|p|section|span|ul)\s[^>]*(id|class)=['"](\
+s/<(a|aside|div|dl|ins|li|p|section|span|ul)\s[^>]*(id|class)=['"](\
   [^'"]*mixi[^'"]*\
 )['"][^>]*>/<$1 style="display:none;">/Usgxi
 
 ################################################################################
 #
-# RSS
+# RSS Button
 #
 ################################################################################
 FILTER: rss-filters rss filter
@@ -171,7 +171,7 @@ s|<a\s[^>]*href=['"](http://\|https://)?(\
 
 ################################################################################
 #
-# feedly
+# feedly Button
 #
 ################################################################################
 FILTER: feedly-filters feedly filter
@@ -179,13 +179,13 @@ s|<a\s[^>]*href=['"](http:\|https:)?//(\
   cloud\.feedly\.com/.*\
 )</a>||Usgxi
 
-s/<(a\s|aside|div|dl|ins|li|p|section|span|ul)\s[^>]*(id|class)=['"](\
+s/<(a|aside|div|dl|ins|li|p|section|span|ul)\s[^>]*(id|class)=['"](\
   [^'"]*feedly[^'"]*\
 )['"][^>]*>/<$1 style="display:none;">/Usgxi
 
 ################################################################################
 #
-# Pocket
+# Pocket Button
 #
 ################################################################################
 FILTER: pocket-filters pocket filter
@@ -193,13 +193,13 @@ s|<a\s[^>]*href=['"]http(s)?://(\
   getpocket\.com/.*\
 )</a>||Usgxi
 
-s/<(a\s|aside|div|dl|ins|li|p|section|span|ul)\s[^>]*(id|class)=['"](\
+s/<(a|aside|div|dl|ins|li|p|section|span|ul)\s[^>]*(id|class)=['"](\
   [^'"]*pocket[^'"]*\
 )['"][^>]*>/<$1 style="display:none;">/Usgxi
 
 ################################################################################
 #
-# Linkedin
+# Linkedin Button
 #
 ################################################################################
 FILTER: linkedin-filters linkedin filter
@@ -207,13 +207,13 @@ s|<script\s[^>]*src=['"]//(\
   platform\.linkedin\.com/.*\|\
   )</script>||Usgxi
 
-s/<(a\s|aside|div|dl|ins|li|p|section|span|ul)\s[^>]*(id|class)=['"](\
+s/<(a|aside|div|dl|ins|li|p|section|span|ul)\s[^>]*(id|class)=['"](\
   [^'"]*linkedin[^'"]*\
 )['"][^>]*>/<$1 style="display:none;">/Usgxi
 
 ################################################################################
 #
-# Instagram
+# Instagram Button
 #
 ################################################################################
 FILTER: instagram-filters instagram filter
@@ -221,13 +221,13 @@ s|<a\s[^>]*href=['"]http(s)?://(\
   instagram\.com/.*\
 )</a>||Usgxi
 
-s/<(a\s|aside|div|dl|ins|li|p|section|span|ul)\s[^>]*(id|class)=['"](\
+s/<(a|aside|div|dl|ins|li|p|section|span|ul)\s[^>]*(id|class)=['"](\
   [^'"]*insta[^'"]*\
 )['"][^>]*>/<$1 style="display:none;">/Usgxi
 
 ################################################################################
 #
-# etc...
+# Other SNS Button
 #
 ################################################################################
 FILTER: sns-filters sns filter
@@ -235,7 +235,7 @@ s|<a\s[^>]*href=['"]http(s)?://(\
   feeds\.feedburner\.com/.*\
 )</a>||Usgxi
 
-s/<(a\s|aside|div|dl|ins|iframe|li|p|section|span|ul)[^>]+(id|class)=['"](\
+s/<(a|aside|div|dl|ins|iframe|li|p|section|span|ul)\s[^>]+(id|class)=['"](\
   [^'"]*sharify[^'"]*|\
   [^'"]*follow[^'"]*|\
   [^'"]*tumblr[^'"]*|\

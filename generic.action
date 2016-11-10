@@ -1,4 +1,4 @@
-# Last Modified: Wed, 02 Nov 2016 10:46:20 UTC
+# Last Modified: Thu, 10 Nov 2016 10:08:58 UTC
 
 #############################################################################
 # Aliases
@@ -55,6 +55,7 @@ adm.shinobi.jp/
 .admob.com/
 .adresult.jp/
 .adriver.ru/
+.adroll.com/
 .advg.jp/
 .affiliate-b.com/
 #.afpbb.com/
@@ -92,6 +93,7 @@ info-zero.jp/
 .krxd.net/
 .liveads.jp/
 .logly.co.jp/
+.mathtag.com/
 .microad.jp/
 .microad.net/
 .moba8.net/
@@ -175,6 +177,7 @@ connect.facebook.net/
 
 .api.twitter.com/
 platform.twitter.com/widgets.js
+t.co/
 ad.hatena.ne.jp/
 .hatena.ne.jp/adsaria/
 .b.st-hatena.com/
@@ -185,11 +188,6 @@ widgets.getpocket.com/
 platform.tumblr.com/
 media.line.me/
 scdn.line-apps.com/
-
-{ +block{Charge a herty fee} }
-sexxxtube.site/
-.monbran.net/
-boxwww.net/
 
 #{ crunch-all-ads }
 #/ # Match all URLs
