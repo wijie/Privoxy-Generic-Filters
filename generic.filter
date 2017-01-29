@@ -1,4 +1,4 @@
-# Last Modified: Wed, 09 Nov 2016 10:28:43 UTC
+# Last Modified: Sun, 29 Jan 2017 09:33:59 UTC
 
 ################################################################################
 #
@@ -21,15 +21,15 @@ s|<(a\|iframe\|img)\s[^>]*(href\|src)=["'](\
   http://[^'"]*\.ajaxtower\.jp/adarea\|\
   http(s)?://[^'"]*\.a8\.net/\|\
 #  http://[^'"]*\.advg\.jp/\|\
-  http://[^'"]*\.linksynergy\.com/\|\
+  http://[^'"]*linksynergy\.(jrs5\.)?com/\|\
   http://[^'"]*\.accesstrade\.net/\|\
-  http://ad2\.trafficgate\.net/\|\
+  http://['"]?ad2\.trafficgate\.net/\|\
   https://[^'"]*affiliate-b\.com/\|\
   http://[^'"]*afl\.rakuten\.co\.jp/\|\
   https://[^'"]*www\.dmm\.co\.jp/mono/goods/\|\
   http://[^'"]*valuecommerce\.com/\|\
   http://[^'"]*bit\.ly/\
-)[^>]*>|<$1 style="display:none;">|Usgx
+)[^>]*>|<$1 style="display:none;">|Usgxi
 
 s/<(div|img|ul)\s[^>]*(class|id)=['"](\
   amazon|\
@@ -122,6 +122,7 @@ s/<(div|li|span)\s+(class|id)=['"](\
   [^'"]+[-_]google|\
   [^'"]*gplus[^'"]*|\
   [^'"]*google-plus|\
+  [^'"]*googleplus[^'"]*|\
   [^'"]*plusone[^'"]*\
 )['"][^>]*>/<$1 style="display:none;">/Usgix
 s|<g:plusone.*</g:plusone>||Usg
@@ -133,10 +134,11 @@ s|<g:plusone.*</g:plusone>||Usg
 ################################################################################
 FILTER: hatena-filters hatena filter
 s|<a\s[^>]*href=["'](http:)?//b\.hatena\.ne\.jp/.*</a>||Usg
+s|<img\s[^>]*src=["']?(http:)?//b\.hatena\.ne\.jp/[^>]+>||Usg
 s/<(div|span|li)\s(class|id)="(\
   [^"]*hatena-star[^"]*|\
   [^"]*hatebu[^"]*|\
-  [^"]*hatena[^"]*\
+  [^"]*hatena(?!(-body))[^"]*\
 )"[^>]*>/<$1 style="display:none;">/Usgix
 
 ################################################################################
@@ -235,12 +237,12 @@ s|<a\s[^>]*href=['"]http(s)?://(\
   feeds\.feedburner\.com/.*\
 )</a>||Usgxi
 
-s/<(a|aside|div|dl|ins|iframe|li|p|section|span|ul)\s[^>]+(id|class)=['"](\
+s/<(a|aside|div|dl|ins|iframe|li|p|section|span|ul)\s[^>]*(id|class)=['"](\
   [^'"]*sharify[^'"]*|\
   [^'"]*follow[^'"]*|\
   [^'"]*tumblr[^'"]*|\
   [^'"]*twipple[^'"]*|\
-  [^'"]*youtube[^'"]*|\
+  # [^'"]*youtube[^'"]*|\
   [^'"]*pinterest[^'"]*|\
   [^'"]*sns[^'"]*|\
   [^'"]*social[^'"]*|\

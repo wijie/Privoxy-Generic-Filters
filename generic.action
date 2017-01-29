@@ -1,4 +1,4 @@
-# Last Modified: Thu, 10 Nov 2016 10:08:58 UTC
+# Last Modified: Sun, 29 Jan 2017 09:42:21 UTC
 
 #############################################################################
 # Aliases
@@ -7,6 +7,7 @@
 
 crunch-generic-ads= +filter{generic-filters}
 crunch-sns= +filter{fb-filters} \
+	    +filter{tw-filters} \
 	    +filter{feedly-filters} \
 	    +filter{gplus-filters} \
 	    +filter{hatena-filters} \
@@ -16,12 +17,12 @@ crunch-sns= +filter{fb-filters} \
 	    +filter{mixi-filters} \
 	    +filter{pocket-filters} \
 	    +filter{rss-filters} \
-	    +filter{sns-filters} \
-	    +filter{tw-filters}
+	    +filter{sns-filters}
 crunch-all-ads= crunch-generic-ads crunch-sns
 
 allow-generic-ads= -filter{generic-filters}
 allow-sns= -filter{fb-filters} \
+	   -filter{tw-filters} \
 	   -filter{feedly-filters} \
 	   -filter{gplus-filters} \
 	   -filter{hatena-filters} \
@@ -31,15 +32,14 @@ allow-sns= -filter{fb-filters} \
 	   -filter{mixi-filters} \
 	   -filter{pocket-filters} \
 	   -filter{rss-filters} \
-	   -filter{sns-filters} \
-	   -filter{tw-filters}
+	   -filter{sns-filters}
 
 allow-all-ads= allow-generic-ads allow-sns
 
 ## end aliases ########################################################
 
 { +block{Mission Complete!} }
-/(.*/)?ad[^/]*.jpg
+/(.*/)?ad[^d][^/]*.jpg
 /(.*/)?ad_.*
 /(.*/)?adparts.*
 /(.*/)?clear.gif
@@ -49,6 +49,7 @@ adm.shinobi.jp/
 .ad-stir.com/
 .ad-v.jp/
 .adapf.com/
+.adcrops.net/
 .addthis.com/
 .adimg.net/
 .adingo.jp/
@@ -82,7 +83,7 @@ gikotena.net/
 .gmossp-sp.jp/
 .grvcdn.com/
 .gsspcln.jp/
-.gvt1.com/
+#.gvt1.com/
 .gvt2.com/
 .impact-ad.jp/
 .im-apps.net/
@@ -109,8 +110,7 @@ info-zero.jp/
 .ptengine.jp/
 qualva.com/
 match.seesaa.jp/
-.setrk.com/
-.sharethis.com/
+.image-rentracks.com/
 .shinobi.jp/
 .shisuh.com/
 .skimresources.com/
@@ -120,6 +120,7 @@ blog.so-net.ne.jp/_js/bl-bookmarks-phone.js
 .teacup.com/common/js/apclips.js
 .thebrighttag.com
 .tidbit.co.in/
+.tracker.iws.vc/
 .trafficgate.net/
 #.traficfactory.biz/
 .turn.com/
@@ -177,7 +178,7 @@ connect.facebook.net/
 
 .api.twitter.com/
 platform.twitter.com/widgets.js
-t.co/
+#t.co/
 ad.hatena.ne.jp/
 .hatena.ne.jp/adsaria/
 .b.st-hatena.com/
