@@ -1,4 +1,4 @@
-# Last Modified: Sun, 29 Jan 2017 09:42:21 UTC
+# Last Modified: Mon, 13 Nov 2017 11:05:47 UTC
 
 #############################################################################
 # Aliases
@@ -39,10 +39,12 @@ allow-all-ads= allow-generic-ads allow-sns
 ## end aliases ########################################################
 
 { +block{Mission Complete!} }
+/(.*/)?randomad.js
 /(.*/)?ad[^d][^/]*.jpg
 /(.*/)?ad_.*
 /(.*/)?adparts.*
 /(.*/)?clear.gif
+.banner.blogranking.net/
 beacon.
 .a8.net/
 adm.shinobi.jp/
@@ -54,6 +56,7 @@ adm.shinobi.jp/
 .adimg.net/
 .adingo.jp/
 .admob.com/
+.adsymptotic.com/
 .adresult.jp/
 .adriver.ru/
 .adroll.com/
@@ -65,22 +68,28 @@ adm.shinobi.jp/
 .amoad.com/
 .applovin.com/
 .apvdr.com/
+.assets.tumblr.com/
 .bidswitch.net/
 .bigmining.com/
 .content.ad/
 .criteo.com/
 .criteo.net/
 .cxense.com/
+.disqus.com/
 .durasite.net/
 .ebis.ne.jp/
 .eco-tag.jp/
 .eimg.jp/
+.embedly.com/
 .fello.net/
 .fout.jp/
+.fwbntw.com/
+gds786bomyc.com/
 .genieesspv.jp/
 gikotena.net/
 .glam.com/
 .gmossp-sp.jp/
+.gravityrd-services.com/
 .grvcdn.com/
 .gsspcln.jp/
 #.gvt1.com/
@@ -93,8 +102,10 @@ info-zero.jp/
 .kau.li/
 .krxd.net/
 .liveads.jp/
+.liveperson.net/
 .logly.co.jp/
 .mathtag.com/
+.mediad2.jp/
 .microad.jp/
 .microad.net/
 .moba8.net/
@@ -102,27 +113,34 @@ info-zero.jp/
 .nakanohito.jp/
 .newrelic.com/
 .newzia.jp/
+nicolive.cdn.nimg.jp/live/simg/public/inc/ichiba.js
 .openx.net/
 .outbrain.com/
 .owneriq.com/
 .php-imdex.com/
 .popin.cc/
+.prf.hn/
+.program.jp/
 .ptengine.jp/
 qualva.com/
 match.seesaa.jp/
+#.r10s.jp/
 .image-rentracks.com/
+.sharethrough.com/
 .shinobi.jp/
 .shisuh.com/
 .skimresources.com/
 .socdm.com/
 blog.so-net.ne.jp/_js/bl-bookmarks-phone.js
+.speee-ad.jp/
 .tapone.jp/
 .teacup.com/common/js/apclips.js
+.teads.tv/
 .thebrighttag.com
 .tidbit.co.in/
 .tracker.iws.vc/
 .trafficgate.net/
-#.traficfactory.biz/
+.traficfactory.biz/
 .turn.com/
 .unitedblades.co.jp/
 .unthem.com/
@@ -176,12 +194,13 @@ graph.facebook.com/
 connect.facebook.net/
 .fbcdn.net/
 
-.api.twitter.com/
 platform.twitter.com/widgets.js
+#platform.twitter.com/
 #t.co/
 ad.hatena.ne.jp/
 .hatena.ne.jp/adsaria/
-.b.st-hatena.com/
+#.b.st-hatena.com/
+.api.b.hatena.ne.jp/
 #b.hatena.ne.jp/
 s.hatena.ne.jp/js/HatenaStar.js
 static.mixi.jp/js/share.js
